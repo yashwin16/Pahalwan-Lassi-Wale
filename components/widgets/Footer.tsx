@@ -125,17 +125,19 @@ const Footer = () => {
                   <Typography sx={{ fontFamily: "'Poppins', sans-serif", fontSize: "14px", color: "#FFF1EB", width: "90px" }}>
                     Any Query ?
                   </Typography>
-                  <Typography
-                    sx={{
-                      fontFamily: "'Poppins', sans-serif",
-                      fontSize: "14px",
-                      color: "#FFF1EB",
-                      textDecoration: "underline",
-                      cursor: "pointer",
-                    }}
-                  >
-                    CONTACT
-                  </Typography>
+                  <Link href="/contact" style={{ textDecoration: "none" }}>
+                    <Typography
+                      sx={{
+                        fontFamily: "'Poppins', sans-serif",
+                        fontSize: "14px",
+                        color: "#FFF1EB",
+                        textDecoration: "underline",
+                        cursor: "pointer",
+                      }}
+                    >
+                      CONTACT
+                    </Typography>
+                  </Link>
                 </Box>
               </Box>
             </Box>
