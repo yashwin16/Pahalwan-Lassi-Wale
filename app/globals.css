@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Maname&family=Romanesco&family=Noto+Serif:ital,wght@0,200;1,200&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pochaevsk&family=Marmelad&family=Ramaraja&family=Marko+One&display=swap');
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-color: #EBEBE2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
