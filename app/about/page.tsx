@@ -1,6 +1,7 @@
 import React from "react";
 import AboutHero from "@/components/layouts/aboutUs/AboutHero";
 import AboutUs from "@/components/layouts/aboutUs/AboutUs";
+import OurLegacy from "@/components/layouts/aboutUs/OurLegacy";
 import OurShops from "@/components/layouts/home/OurShops";
 import { Metadata } from "next";
 
@@ -15,6 +16,7 @@ export default function AboutPage() {
     <main>
       <AboutHero />
       <AboutUs />
+      <OurLegacy />
       <OurShops />
     </main>
   );

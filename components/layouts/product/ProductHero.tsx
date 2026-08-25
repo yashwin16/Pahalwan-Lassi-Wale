@@ -127,6 +127,19 @@ const ProductHero = () => {
         }}
       />
 
+      {/* Bottom Dark Overlay Gradient for Stats readability */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: { xs: "50%", md: "30%" },
+          background: "linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%)",
+          zIndex: 1,
+        }}
+      />
+
       <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", flexGrow: 1, px: { xs: 2, md: 8 } }}>
         <Box sx={{ maxWidth: "700px", mt: { xs: "20px", md: "50px" } }}>
           

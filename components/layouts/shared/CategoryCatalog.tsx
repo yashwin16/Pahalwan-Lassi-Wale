@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import { Box, Typography, TextField, InputAdornment, Container, Button, Paper, InputBase, IconButton } from "@mui/material";
+import { useGSAP } from "@gsap/react";
 import SearchIcon from "@mui/icons-material/Search";
-import { Maname, Inter, EB_Garamond, Ramaraja, Open_Sans, Signika } from "next/font/google";
-import { menuData } from "../../../utils/generic-data";
+import { Box, Button, Container, InputBase, Paper, Typography } from "@mui/material";
+import gsap from "gsap";
+import { EB_Garamond, Inter, Maname, Open_Sans, Ramaraja, Signika } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { menuData } from "../../../utils/generic-data";
 
 const maname = Maname({ weight: "400", subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
@@ -228,10 +227,22 @@ export default function CategoryCatalog({ activeTopPill, allowedCategories }: Ca
 
   useGSAP(() => {
     gsap.fromTo(".product-card-anim", 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.out", overwrite: "auto" }
+      { 
+        opacity: 0, 
+        y: 150, // Shorter distance ensures rendering doesn't drop frames
+      },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.7, 
+        stagger: 0.05, // Faster stagger for a tighter, smoother group appearance
+        ease: "power2.out", 
+        overwrite: "auto",
+        clearProps: "transform",
+        delay: 0.15 // Wait slightly to avoid clashing with the browser's smooth scroll engine
+      }
     );
-  }, { dependencies: [activeFilter, searchQuery], scope: containerRef });
+  }, { dependencies: [activeFilter, searchQuery], scope: containerRef, revertOnUpdate: true });
 
   const handleCategoryClick = (cat: string) => {
     setActiveFilter(cat);
@@ -248,7 +259,7 @@ export default function CategoryCatalog({ activeTopPill, allowedCategories }: Ca
   };
 
   return (
-    <Box ref={containerRef} sx={{ width: "100%", py: "40px", backgroundColor: "#EBEBE2", minHeight: "100vh", overflow: "hidden" }}>
+    <Box ref={containerRef} sx={{ width: "100%", py: "40px", backgroundColor: "#EBEBE2", minHeight: "100vh" }}>
       <Container maxWidth={false} sx={{ maxWidth: "1360px", mx: "auto", px: { xs: 2, md: "34px" } }}>
         
         {/* Top Navigation Pills (Separate pills matching latest Figma screenshot) */}
@@ -261,21 +272,24 @@ export default function CategoryCatalog({ activeTopPill, allowedCategories }: Ca
                   sx={{
                     width: "auto",
                     minWidth: { xs: "80px", sm: "120px" },
-                    height: "32px",
+                    height: "36px", 
                     padding: { xs: "0 12px", sm: "0 24px" },
-                    pt: "5px", // Visually balance the font's high baseline
-                    color: "#000000",
+                    pt: "4px", // Manually pushes the text DOWN to counter the font's high baseline
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: pill === activeTopPill ? "#FFFFFF" : "#000000",
                     fontFamily: ramaraja.style.fontFamily,
                     fontWeight: "400",
                     fontSize: { xs: "16px", sm: "24px" },
-                    lineHeight: "24px",
+                    lineHeight: 1,
                     textTransform: "none",
-                    border: "1.5px solid #93928B",
+                    border: pill === activeTopPill ? "1.5px solid #BA080F" : "1.5px solid #93928B",
                     borderRadius: "20px",
-                    backgroundColor: pill === activeTopPill ? "rgba(0,0,0,0.05)" : "transparent",
+                    backgroundColor: pill === activeTopPill ? "#BA080F" : "transparent", 
                     flexShrink: 0,
                     "&:hover": {
-                      backgroundColor: "rgba(0,0,0,0.08)",
+                      backgroundColor: pill === activeTopPill ? "#99060C" : "rgba(0,0,0,0.08)",
                     }
                   }}
                 >
@@ -359,16 +373,16 @@ export default function CategoryCatalog({ activeTopPill, allowedCategories }: Ca
               flexShrink: 0,
               alignSelf: "flex-start", // Prevents stretching in flex row, allowing sticky to work
               position: "sticky",
-              top: { xs: "89px", md: "100px" }, // Stick just below navbar on mobile
+              top: { xs: "89px", md: "120px" }, // Sticking slightly lower so it doesn't touch navbar
               zIndex: 10,
-              backgroundColor: { xs: "#EBEBE2", md: "transparent" }, // Solid background on mobile to hide scrolling content underneath
-              pt: { xs: "10px", md: "72px" },
+              backgroundColor: { xs: "#EBEBE2", md: "transparent" }, 
+              pt: { xs: "10px", md: "95px" }, // Pushed down to align perfectly with the top border of product cards
               pb: { xs: "10px", md: 0 },
-              borderBottom: { xs: "1px solid rgba(0,0,0,0.05)", md: "none" } // Optional divider on mobile
+              borderBottom: { xs: "1px solid rgba(0,0,0,0.05)", md: "none" } 
             }}>
               <Box sx={{ 
                 display: "flex", 
-                flexDirection: { xs: "row", md: "column" }, // Horizontal scroll on mobile
+                flexDirection: { xs: "row", md: "column" }, 
                 overflowX: { xs: "auto", md: "visible" },
                 gap: { xs: "20px", md: "25px" },
                 "&::-webkit-scrollbar": { display: "none" }, // Hide scrollbar for sleek UI
@@ -376,23 +390,46 @@ export default function CategoryCatalog({ activeTopPill, allowedCategories }: Ca
                 scrollbarWidth: "none"
               }}>
                 {availableCategories.map((cat, index) => (
-                  <Typography
-                    key={index}
-                    onClick={() => handleCategoryClick(cat)}
-                    sx={{
-                      fontFamily: openSans.style.fontFamily,
-                      fontWeight: "700",
-                      fontSize: "20px",
-                      letterSpacing: "1px",
-                      color: activeFilter === cat ? "#444444" : "#888888",
-                      cursor: "pointer",
-                      whiteSpace: "nowrap", // Prevent breaking on mobile
-                      transition: "color 0.2s ease",
-                      "&:hover": { color: "#444444" }
+                  <Box 
+                    key={index} 
+                    onClick={() => handleCategoryClick(cat)} 
+                    sx={{ 
+                      display: "flex", 
+                      alignItems: "center", 
+                      cursor: "pointer", 
+                      gap: "12px",
+                      position: "relative"
                     }}
                   >
-                    {cat}
-                  </Typography>
+                    {/* Active Indicator Line */}
+                    <Box sx={{ 
+                      width: "4px", 
+                      height: "24px", 
+                      backgroundColor: activeFilter === cat ? "#BA080F" : "transparent",
+                      borderRadius: "0 4px 4px 0",
+                      transition: "background-color 0.3s ease",
+                      position: "absolute",
+                      left: "-15px" // Places it slightly outside the text alignment
+                    }} />
+                    <Typography
+                      sx={{
+                        fontFamily: openSans.style.fontFamily,
+                        fontWeight: "700",
+                        fontSize: "20px",
+                        letterSpacing: "1px",
+                        color: activeFilter === cat ? "#BA080F" : "#888888",
+                        whiteSpace: "nowrap", 
+                        transition: "all 0.3s ease",
+                        transform: activeFilter === cat ? "translateX(5px)" : "none", // Nudges selected text forward
+                        "&:hover": { 
+                          color: activeFilter === cat ? "#BA080F" : "#666666",
+                          transform: activeFilter === cat ? "translateX(5px)" : "translateX(2px)"
+                        }
+                      }}
+                    >
+                      {cat}
+                    </Typography>
+                  </Box>
                 ))}
               </Box>
             </Box>
@@ -457,20 +494,21 @@ export default function CategoryCatalog({ activeTopPill, allowedCategories }: Ca
             {/* Products Grid */}
             <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "30px" }}>
               {activeItems.length > 0 ? (
-                activeItems.map((item, index) => (
-                  <ProductCard key={index} item={item} />
+                activeItems.map((item) => (
+                  <ProductCard key={item.name} item={item} />
                 ))
               ) : (
                 <Typography sx={{ color: "#7C7C7C", textAlign: "center", gridColumn: "1 / -1", py: 10 }}>No products found in this category.</Typography>
               )}
             </Box>
 
-            <Typography sx={{ fontFamily: inter.style.fontFamily, fontSize: "12px", color: "#888", mt: 6, mb: 2, textAlign: "center", width: "100%" }}>
-              *Disclaimer: Images shown are for representational purposes only. Actual products may vary upon visit.
-            </Typography>
-
           </Box>
         </Box>
+
+        {/* Disclaimer Moved Outside Flex Container */}
+        <Typography sx={{ fontFamily: inter.style.fontFamily, fontSize: "12px", color: "#888", mt: 6, mb: 2, textAlign: "center", width: "100%" }}>
+          *Disclaimer: Images shown are for representational purposes only. Actual products may vary upon visit.
+        </Typography>
       </Container>
     </Box>
   );

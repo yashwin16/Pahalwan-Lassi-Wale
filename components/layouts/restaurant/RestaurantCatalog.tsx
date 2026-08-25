@@ -1,17 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
-import { Box, Typography, Container, Button, Paper, InputBase } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import { Inter, Ramaraja, Maven_Pro, Open_Sans, EB_Garamond } from "next/font/google";
-import { restroMenuData } from "../../../utils/restro-data";
-import Image from "next/image";
-import Link from "next/link";
-import { MenuItem } from "../../../utils/generic-data";
 import { useGSAP } from "@gsap/react";
+import SearchIcon from "@mui/icons-material/Search";
+import { Box, Button, Container, InputBase, Paper, Typography } from "@mui/material";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { EB_Garamond, Inter, Maven_Pro, Open_Sans, Ramaraja } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useRef } from "react";
+import { restroMenuData } from "../../../utils/restro-data";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -107,7 +105,7 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
   }, { scope: containerRef, dependencies: [activeCategory, searchQuery] });
 
   return (
-    <Box ref={containerRef} sx={{ width: "100%", py: "40px", backgroundColor: "#EBEBE2", minHeight: "100vh", overflow: "hidden" }}>
+    <Box ref={containerRef} sx={{ width: "100%", py: "40px", backgroundColor: "#EBEBE2", minHeight: "100vh" }}>
       <Container maxWidth={false} sx={{ maxWidth: "1360px", mx: "auto", px: { xs: 2, md: "34px" } }}>
         
         {/* Top Navigation Pills */}
@@ -121,21 +119,24 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
                   sx={{
                     width: "auto",
                     minWidth: { xs: "80px", sm: "120px" },
-                    height: "32px",
+                    height: "36px", 
                     padding: { xs: "0 12px", sm: "0 24px" },
-                    pt: "5px", // Visually balance the font's high baseline
-                    color: "#000000",
+                    pt: "4px", // Manually pushes the text DOWN to counter the font's high baseline
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: pill === activeTopPill ? "#FFFFFF" : "#000000",
                     fontFamily: ramaraja.style.fontFamily,
                     fontWeight: "400",
                     fontSize: { xs: "16px", sm: "24px" },
-                    lineHeight: "24px",
+                    lineHeight: 1,
                     textTransform: "none",
-                    border: "1.5px solid #93928B",
+                    border: pill === activeTopPill ? "1.5px solid #BA080F" : "1.5px solid #93928B",
                     borderRadius: "20px",
-                    backgroundColor: pill === activeTopPill ? "rgba(0,0,0,0.05)" : "transparent",
+                    backgroundColor: pill === activeTopPill ? "#BA080F" : "transparent",
                     flexShrink: 0,
                     "&:hover": {
-                      backgroundColor: "rgba(0,0,0,0.08)",
+                      backgroundColor: pill === activeTopPill ? "#99060C" : "rgba(0,0,0,0.08)",
                     }
                   }}
                 >
@@ -186,7 +187,7 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
           >
             <SearchIcon sx={{ color: "rgba(0,0,0,0.61)", fontSize: "20px" }} />
             <InputBase
-              placeholder="Search what you want"
+              placeholder="What you want"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               sx={{
@@ -240,22 +241,33 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
                       alignItems: "center",
                       mb: 3.5,
                       cursor: "pointer",
-                      "&:hover": { opacity: 0.7 }
+                      position: "relative"
                     }}
                   >
-                    {isActive && (
-                      <Typography sx={{ mr: 2, fontFamily: openSans.style.fontFamily, fontWeight: 700, fontSize: "20px", color: "#444" }}>
-                        {">"}
-                      </Typography>
-                    )}
+                    {/* Active Indicator Line */}
+                    <Box sx={{ 
+                      width: "4px", 
+                      height: "24px", 
+                      backgroundColor: isActive ? "#BA080F" : "transparent",
+                      borderRadius: "0 4px 4px 0",
+                      transition: "background-color 0.3s ease",
+                      position: "absolute",
+                      left: "-15px"
+                    }} />
                     <Typography 
                       sx={{ 
                         fontFamily: openSans.style.fontFamily, 
                         fontWeight: isActive ? 700 : 600, 
                         fontSize: isActive ? "20px" : "16px", 
-                        color: "#444",
-                        ml: isActive ? 0 : "25px",
-                        letterSpacing: isActive ? "1px" : "0px"
+                        color: isActive ? "#BA080F" : "#444444",
+                        letterSpacing: isActive ? "1px" : "0px",
+                        whiteSpace: "nowrap",
+                        transition: "all 0.3s ease",
+                        transform: isActive ? "translateX(5px)" : "none",
+                        "&:hover": { 
+                          color: isActive ? "#BA080F" : "#666666",
+                          transform: isActive ? "translateX(5px)" : "translateX(2px)"
+                        }
                       }}
                     >
                       {cat}
@@ -291,22 +303,10 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
                   }}>
                     {/* Image Block Wrapper */}
                     <Box sx={{ flex: 1, display: "flex", justifyContent: { xs: "center", md: isEven ? "flex-start" : "flex-end" }, width: "100%" }}>
-                      {/* Image Block with Subcategory Heading */}
+                      {/* Image Block without Subcategory Heading */}
                       <Box sx={{ display: "flex", flexDirection: "column", flexShrink: 0, width: "100%", maxWidth: "303px", height: "100%" }}>
-                        <Box sx={{ height: { xs: "auto", md: "48px" }, minHeight: "30px", display: "flex", alignItems: "flex-start", mb: { xs: 1, md: 0 }, justifyContent: { xs: "center", md: "flex-start" } }}>
-                            <Typography 
-                              sx={{ 
-                                fontFamily: inter.style.fontFamily, 
-                                fontWeight: 700, 
-                                fontSize: { xs: "20px", md: "24px" }, 
-                                lineHeight: { xs: "24px", md: "24px" },
-                                color: "#222",
-                                textAlign: { xs: "center", md: "left" } 
-                              }}
-                            >
-                              {subCat}
-                            </Typography>
-                          </Box>
+                        {/* Hidden placeholder on desktop to align the image vertically with the list */}
+                        <Box sx={{ display: { xs: "none", md: "block" }, height: "48px", minHeight: "30px" }} />
                         <Box sx={{ 
                           width: "100%",
                           height: { xs: "200px", md: "258px" },
@@ -333,9 +333,28 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
                     {/* Items Block Wrapper */}
                     <Box sx={{ flex: 1, display: "flex", justifyContent: { xs: "center", md: isEven ? "flex-end" : "flex-start" }, width: "100%" }}>
                       {/* Items Block */}
-                      <Box sx={{ width: "100%", maxWidth: { xs: "100%", sm: "400px", md: "400px" }, pt: { xs: 0, md: subCat !== "Other" ? "48px" : 0 }, px: { xs: 1, md: 0 } }}>
+                      <Box sx={{ width: "100%", maxWidth: { xs: "100%", sm: "400px", md: "400px" }, px: { xs: 1, md: 0 } }}>
+                        
+                        {/* Subcategory Heading (Moved here to align with Name/Price) */}
+                        {subCat !== "Other" && (
+                          <Box sx={{ height: { xs: "auto", md: "48px" }, minHeight: "30px", display: "flex", alignItems: "flex-start", mb: { xs: 1, md: 0 }, justifyContent: { xs: "center", md: "flex-start" } }}>
+                            <Typography 
+                              sx={{ 
+                                fontFamily: inter.style.fontFamily, 
+                                fontWeight: 700, 
+                                fontSize: { xs: "20px", md: "24px" }, 
+                                lineHeight: { xs: "24px", md: "24px" },
+                                color: "#222",
+                                textAlign: { xs: "center", md: "left" } 
+                              }}
+                            >
+                              {subCat}
+                            </Typography>
+                          </Box>
+                        )}
+
                         {/* Subheadings for Name and Price */}
-                        <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2, pb: 1, borderBottom: "2px solid rgba(0,0,0,0.05)", height: "32px", alignItems: "flex-end" }}>
+                        <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2, pb: 1, borderBottom: "2px solid rgba(0,0,0,0.05)", height: "32px", alignItems: "flex-end", mt: subCat === "Other" ? { xs: 0, md: "48px" } : 0 }}>
                           <Typography sx={{ fontFamily: openSans.style.fontFamily, fontWeight: 700, fontSize: "14px", color: "#888", textTransform: "uppercase", lineHeight: "16px" }}>
                             Name
                           </Typography>
@@ -360,11 +379,13 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
                 </Box>
               );
             })}
-            <Typography sx={{ fontFamily: inter.style.fontFamily, fontSize: "12px", color: "#888", mt: 4, textAlign: "center", width: "100%" }}>
-              *Disclaimer: Images shown are for representational purposes only. Actual products may vary upon visit.
-            </Typography>
           </Box>
         </Box>
+
+        {/* Disclaimer Moved Outside Flex Container */}
+        <Typography sx={{ fontFamily: inter.style.fontFamily, fontSize: "12px", color: "#888", mt: 4, textAlign: "center", width: "100%" }}>
+          *Disclaimer: Images shown are for representational purposes only. Actual products may vary upon visit.
+        </Typography>
       </Container>
     </Box>
   );

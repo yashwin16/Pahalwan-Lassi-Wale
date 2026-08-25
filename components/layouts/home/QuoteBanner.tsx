@@ -40,21 +40,22 @@ export default function QuoteBanner() {
       ref={container}
       sx={{
         width: "100%",
-        minHeight: "150px",
+        minHeight: { xs: "100px", md: "150px" },
         background: "linear-gradient(90deg, #DA393F 0%, #BA080F 100%)",
         display: "flex",
         alignItems: "center",
-        py: { xs: "24px", md: 0 },
+        py: { xs: "32px", md: "40px", lg: 0 },
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 4, md: 6, lg: 8 } }}>
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: { xs: "20px", md: "60px" },
+            justifyContent: { xs: "center", md: "center", lg: "space-between" },
+            flexWrap: { xs: "wrap", lg: "nowrap" },
+            gap: { xs: "20px", sm: "30px", md: "40px", lg: "10px" },
             alignItems: "center",
+            width: "100%",
           }}
         >
           {[
@@ -64,14 +65,15 @@ export default function QuoteBanner() {
             { icon: "🏢", text: "Corporate Events" },
             { icon: "🎊", text: "Family Celebrations" },
           ].map((item, index) => (
-            <Box key={index} className="quote-item" sx={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <Typography sx={{ fontSize: { xs: "20px", md: "26px" } }}>{item.icon}</Typography>
+            <Box key={index} className="quote-item" sx={{ display: "flex", alignItems: "center", gap: { xs: "8px", sm: "12px" } }}>
+              <Typography sx={{ fontSize: { xs: "20px", sm: "24px", md: "26px", lg: "30px" } }}>{item.icon}</Typography>
               <Typography
                 sx={{
                   fontFamily: markoOne.style.fontFamily,
                   color: "#FFFFFF",
-                  fontSize: { xs: "16px", sm: "20px", md: "24px", lg: "26px" },
+                  fontSize: { xs: "16px", sm: "18px", md: "22px", lg: "24px" },
                   fontWeight: 400,
+                  whiteSpace: "nowrap"
                 }}
               >
                 {item.text}

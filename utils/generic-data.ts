@@ -53,7 +53,7 @@ export const menuData: MenuItem[] = [
     "name": "Special sugarfree lassi",
     "unit": "per glass",
     "price": 60,
-    "image": "/images/lassi/sugarFree.webp"
+    "image": "/images/lassi/sugarfree.webp"
   },
   {
     "category": "Beverages",
@@ -124,7 +124,7 @@ export const menuData: MenuItem[] = [
       "500gm": 226,
       "1kg": 452
     },
-    "image": "/images/sweets/desserts/gazarHalwa.webp"
+    "image": "/images/sweets/desserts/gazarhalwa.webp"
   },
   {
     "category": "Dessert",
@@ -217,7 +217,7 @@ export const menuData: MenuItem[] = [
       "500gm": 200,
       "1kg": 400
     },
-    "image": "/images/sweets/chena/chenaGreenRasgulla.webp"
+    "image": "/images/sweets/chena/chenaGreenrasgulla.webp"
   },
   {
     "category": "Chena",
@@ -481,7 +481,7 @@ export const menuData: MenuItem[] = [
       "500gm": 150,
       "1kg": 300
     },
-    "image": "/images/sweets/ghee/soan.webp"
+    "image": "/images/sweets/Ghee/soan.webp"
   },
   {
     "category": "ghee sweets",
@@ -492,7 +492,7 @@ export const menuData: MenuItem[] = [
       "500gm": 150,
       "1kg": 300
     },
-    "image": "/images/sweets/ghee/churma.webp"
+    "image": "/images/sweets/Ghee/churma.webp"
   },
   {
     "category": "ghee sweets",
@@ -503,7 +503,7 @@ export const menuData: MenuItem[] = [
       "500gm": 150,
       "1kg": 300
     },
-    "image": "/images/sweets/ghee/besan.webp"
+    "image": "/images/sweets/Ghee/besan.webp"
   },
   {
     "category": "ghee sweets",
@@ -514,7 +514,7 @@ export const menuData: MenuItem[] = [
       "500gm": 150,
       "1kg": 300
     },
-    "image": "/images/sweets/ghee/boondi.webp"
+    "image": "/images/sweets/Ghee/boondi.webp"
   },
   {
     "category": "ghee sweets",
@@ -525,7 +525,7 @@ export const menuData: MenuItem[] = [
       "500gm": 150,
       "1kg": 300
     },
-    "image": "/images/sweets/ghee/jodhpuri.webp"
+    "image": "/images/sweets/Ghee/jodhpuri.webp"
   },
   {
     "category": "ghee sweets",
@@ -536,7 +536,7 @@ export const menuData: MenuItem[] = [
       "500gm": 150,
       "1kg": 300
     },
-    "image": "/images/sweets/ghee/baluu.webp"
+    "image": "/images/sweets/Ghee/baluu.webp"
   },
   {
     "category": "Gajak",
@@ -624,7 +624,7 @@ export const menuData: MenuItem[] = [
       "500gm": 210,
       "1kg": 420
     },
-    "image": "/images/sweets/gazak/khoyaGazak.webp"
+    "image": "/images/sweets/gazak/khoyagazak.webp"
   },
   {
     "category": "Gajak",

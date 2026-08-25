@@ -53,7 +53,13 @@ export default function ContactUs() {
     validationSchema: Yup.object({
       name: Yup.string().required('Name is required'),
       email: Yup.string().email('Invalid email address').required('Email is required'),
-      phone: Yup.string().required('Phone number is required').min(10, 'Phone number is too short'),
+      phone: Yup.string()
+        .required('Phone number is required')
+        .test('is-10-digits', 'Phone number must be exactly 10 digits', val => {
+          if (!val) return false;
+          const digits = val.replace(/\D/g, '');
+          return digits.length === 12; // +91 (2 digits) + 10 digit number
+        }),
       message: Yup.string().required('Message is required'),
       agreeTerms: Yup.boolean().oneOf([true], 'You must accept the terms and conditions'),
     }),
@@ -140,7 +146,7 @@ export default function ContactUs() {
                 />
                 <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, gap: { xs: 0, md: 4 }, justifyContent: "space-between" }}>
                   <CustomInput 
-                    label="Mail" 
+                    label="Email" 
                     name="email"
                     fullWidth={false}
                     value={formik.values.email}
@@ -158,13 +164,29 @@ export default function ContactUs() {
                       variant="standard"
                       name="phone"
                       value={formik.values.phone}
-                      onChange={(newValue) => formik.setFieldValue('phone', newValue)}
+                      onChange={(newValue) => {
+                        // Allow typing only if the total number of digits is 12 or less (2 for '91' country code + 10 phone digits)
+                        const digits = newValue.replace(/\D/g, '');
+                        if (digits.length <= 12) {
+                          formik.setFieldValue('phone', newValue);
+                        }
+                      }}
                       onBlur={() => formik.setFieldTouched('phone', true)}
                       error={formik.touched.phone && Boolean(formik.errors.phone)}
                       helperText={formik.touched.phone ? formik.errors.phone : ''}
                       defaultCountry="IN"
                       disableDropdown={true}
                       fullWidth
+                      onKeyDown={(e) => {
+                        // Allow control keys like backspace, delete, arrows, tab
+                        if (['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Tab'].includes(e.key)) return;
+                        
+                        const digits = formik.values.phone.replace(/\D/g, '');
+                        // If we already have 10 digits (plus 2 for +91) and the user types a new number, block it natively
+                        if (digits.length >= 12 && /^\d$/.test(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
                       sx={{
                         '& .MuiInput-underline:before': { borderBottomColor: formik.touched.phone && Boolean(formik.errors.phone) ? '#EA1B2C' : '#0F0E0E' },
                         '& .MuiInput-underline:hover:not(.Mui-disabled):before': { borderBottomColor: formik.touched.phone && Boolean(formik.errors.phone) ? '#EA1B2C' : '#0F0E0E' },
