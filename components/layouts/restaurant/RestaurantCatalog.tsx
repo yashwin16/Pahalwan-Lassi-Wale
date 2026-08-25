@@ -286,13 +286,13 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
                     display: "flex", 
                     flexDirection: { xs: "column", md: isEven ? "row" : "row-reverse" }, 
                     gap: { xs: "30px", md: "60px" },
-                    alignItems: "flex-start",
+                    alignItems: "stretch",
                     justifyContent: "center"
                   }}>
                     {/* Image Block Wrapper */}
                     <Box sx={{ flex: 1, display: "flex", justifyContent: { xs: "center", md: isEven ? "flex-start" : "flex-end" }, width: "100%" }}>
                       {/* Image Block with Subcategory Heading */}
-                      <Box sx={{ display: "flex", flexDirection: "column", flexShrink: 0, width: "100%", maxWidth: "303px" }}>
+                      <Box sx={{ display: "flex", flexDirection: "column", flexShrink: 0, width: "100%", maxWidth: "303px", height: "100%" }}>
                         <Box sx={{ height: { xs: "auto", md: "48px" }, minHeight: "30px", display: "flex", alignItems: "flex-start", mb: { xs: 1, md: 0 }, justifyContent: { xs: "center", md: "flex-start" } }}>
                             <Typography 
                               sx={{ 
@@ -314,7 +314,8 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
                           borderRadius: "10px",
                           overflow: "hidden",
                           backgroundColor: "rgba(0,0,0,0.06)",
-                          boxShadow: "0 4px 12px rgba(0,0,0,0.05)"
+                          boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                          my: "auto"
                         }}>
                           {imageSrc ? (
                              <Image src={imageSrc} alt={subCat} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "cover" }} />

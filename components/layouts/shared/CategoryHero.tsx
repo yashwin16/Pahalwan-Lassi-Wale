@@ -42,6 +42,7 @@ export default function CategoryHero({ title, desktopImage, mobileImage }: Categ
           alignItems: "center",
           backgroundColor: "#BA080F", // Brand red
           overflow: "hidden",
+          mb: { xs: "15px", md: "30px" }, // Gap between banner and image
         }}
       >
         <Box

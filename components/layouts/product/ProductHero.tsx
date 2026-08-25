@@ -21,6 +21,7 @@ const statsData = [
   { value: "100+", label: "VARIETIES" },
   { value: "DAILY", label: "MADE FRESH" },
   { value: "1989", label: "AUTHENTIC RECIPES" },
+  { value: "100%", label: "VEGETARIAN" },
 ];
 
 const ProductHero = () => {
@@ -65,8 +66,8 @@ const ProductHero = () => {
         justifyContent: "center",
         color: "#fff",
         overflow: "hidden", 
-        pt: { xs: "100px", md: "140px" }, 
-        pb: { xs: "40px", md: "40px" } 
+        pt: { xs: "80px", md: "90px" }, 
+        pb: { xs: "20px", md: "20px" } 
       }}
     >
       {/* Background Image for Desktop */}
@@ -86,7 +87,7 @@ const ProductHero = () => {
           alt="Product Hero Background Desktop"
           fill sizes="100vw"
           quality={100}
-          style={{ objectFit: "cover", objectPosition: "center" }}
+          style={{ objectFit: "cover", objectPosition: "top center" }}
           priority
         />
       </Box>
@@ -108,7 +109,7 @@ const ProductHero = () => {
           alt="Product Hero Background Mobile"
           fill sizes="100vw"
           quality={100}
-          style={{ objectFit: "cover", objectPosition: "center" }}
+          style={{ objectFit: "cover", objectPosition: "top center" }}
           priority
         />
       </Box>
@@ -126,11 +127,11 @@ const ProductHero = () => {
         }}
       />
 
-      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "center", px: { xs: 2, md: 8 } }}>
-        <Box sx={{ maxWidth: "700px" }}>
+      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", flexGrow: 1, px: { xs: 2, md: 8 } }}>
+        <Box sx={{ maxWidth: "700px", mt: { xs: "20px", md: "50px" } }}>
           
           {/* Top Label */}
-          <Box className="hero-element" sx={{ display: "flex", alignItems: "center", justifyContent: { xs: "center", md: "flex-start" }, gap: "16px", mb: "30px", width: "100%" }}>
+          <Box className="hero-element" sx={{ display: "flex", alignItems: "center", justifyContent: { xs: "center", md: "flex-start" }, gap: "16px", mb: { xs: "10px", md: "16px" }, width: "100%" }}>
             <Box sx={{ display: { xs: "none", sm: "block" }, width: "40px", height: "1px", backgroundColor: "#D4AF37" }} />
             <Typography
               sx={{
@@ -149,11 +150,11 @@ const ProductHero = () => {
           </Box>
 
           {/* Main Headline */}
-          <Box className="hero-element" sx={{ mb: "30px" }}>
+          <Box className="hero-element" sx={{ mb: { xs: "12px", md: "16px" } }}>
             <Typography
               sx={{
                 fontFamily: ebGaramond.style.fontFamily,
-                fontSize: { xs: "42px", md: "84px" },
+                fontSize: { xs: "32px", sm: "44px", md: "56px", lg: "68px" },
                 fontWeight: 500,
                 lineHeight: 1.1,
                 color: "#FFFFFF",
@@ -165,7 +166,7 @@ const ProductHero = () => {
               <Typography
                 sx={{
                   fontFamily: romanesco.style.fontFamily,
-                  fontSize: { xs: "56px", md: "110px" },
+                  fontSize: { xs: "44px", sm: "60px", md: "72px", lg: "90px" },
                   color: "#F69F9B", 
                   lineHeight: 0.8,
                   mt: { xs: "10px", md: "0" }
@@ -176,7 +177,7 @@ const ProductHero = () => {
               <Typography
                 sx={{
                   fontFamily: ebGaramond.style.fontFamily,
-                  fontSize: { xs: "42px", md: "84px" },
+                  fontSize: { xs: "32px", sm: "44px", md: "56px", lg: "68px" },
                   fontWeight: 500,
                   lineHeight: 1.1,
                   color: "#FFFFFF",
@@ -195,8 +196,8 @@ const ProductHero = () => {
               fontWeight: 300,
               fontSize: { xs: "16px", md: "20px" },
               color: "rgba(255, 255, 255, 0.9)",
-              lineHeight: 1.6,
-              mb: "50px",
+              lineHeight: 1.5,
+              mb: { xs: "24px", md: "40px" },
               maxWidth: "650px",
             }}
           >
@@ -204,7 +205,7 @@ const ProductHero = () => {
           </Typography>
 
           {/* Buttons */}
-          <Box className="hero-element" sx={{ display: "flex", gap: "24px", flexWrap: "wrap", mb: { xs: "60px", md: "100px" } }}>
+          <Box className="hero-element" sx={{ display: "flex", gap: "20px", flexWrap: "wrap", mb: { xs: "24px", md: "40px" } }}>
             <Button
               variant="contained"
               onClick={handleScrollToProducts}
@@ -237,9 +238,9 @@ const ProductHero = () => {
             alignItems: "center",
             width: "100%",
             flexWrap: "wrap",
-            gap: "30px",
+            gap: { xs: "16px", md: "20px" },
             borderTop: "1px solid rgba(255,255,255,0.1)",
-            pt: "40px",
+            pt: { xs: "16px", md: "20px" },
             mt: "auto" 
           }}
         >
@@ -248,10 +249,10 @@ const ProductHero = () => {
               <Typography
                 sx={{
                   fontFamily: ebGaramond.style.fontFamily,
-                  fontSize: { xs: "32px", md: "52px" },
+                  fontSize: { xs: "28px", sm: "36px", md: "40px", lg: "44px" },
                   color: "#D4AF37", 
                   lineHeight: 1,
-                  mb: "8px",
+                  mb: "6px",
                 }}
               >
                 {stat.value}
