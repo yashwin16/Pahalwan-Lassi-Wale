@@ -51,6 +51,7 @@ const OurShops = () => {
         flexDirection: "column",
         alignItems: "center",
         position: "relative",
+        overflow: "hidden",
       }}
     >
       {/* Background Pattern */}

@@ -75,7 +75,7 @@ export default function BestSellers() {
   }, { scope: container });
 
   return (
-    <Box ref={container} sx={{ width: "100%", py: { xs: "60px", md: "100px" }, backgroundColor: "#EBEBE2" }}>
+    <Box ref={container} sx={{ width: "100%", py: { xs: "60px", md: "100px" }, backgroundColor: "#EBEBE2", overflow: "hidden" }}>
       <Container maxWidth="xl" sx={{ px: { xs: 2, md: 4 } }}>
         {/* Title Section */}
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: "50px", textAlign: "center" }}>

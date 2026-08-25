@@ -105,7 +105,7 @@ const Footer = () => {
               <Typography
                 sx={{
                   fontFamily: "'Ramaraja', serif",
-                  fontSize: "24px",
+                  fontSize: { xs: "20px", lg: "24px" },
                   lineHeight: "1",
                   color: "#EBEBE2",
                 }}
@@ -143,14 +143,14 @@ const Footer = () => {
             </Box>
 
             {/* Spacer for Logo in the center (only on desktop) */}
-            <Box sx={{ display: { xs: "none", md: "block" }, width: "220px" }} />
+            <Box sx={{ display: { xs: "none", md: "block" }, width: { md: "120px", lg: "220px" } }} />
 
             {/* Column 3: Order Us On */}
             <Box className="footer-column" sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               <Typography
                 sx={{
                   fontFamily: "'Ramaraja', serif",
-                  fontSize: "24px",
+                  fontSize: { xs: "20px", lg: "24px" },
                   lineHeight: "1",
                   color: "#EBEBE2",
                 }}
@@ -176,7 +176,7 @@ const Footer = () => {
               <Typography
                 sx={{
                   fontFamily: "'Ramaraja', serif",
-                  fontSize: "24px",
+                  fontSize: { xs: "20px", lg: "24px" },
                   lineHeight: "1",
                   color: "#EBEBE2",
                 }}
@@ -199,20 +199,20 @@ const Footer = () => {
         <Box
           sx={{
             width: "100%",
-            height: "68px", 
+            minHeight: "68px", 
             background: "linear-gradient(180deg, #8F0006 0%, #700004 100%)", 
             boxShadow: "inset 0px 1px 0px rgba(255, 255, 255, 0.4)", 
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             margin: 0,
-            padding: 0,
+            padding: { xs: "16px 0", md: 0 },
           }}
         >
           <Typography
             sx={{
               fontFamily: "'Ramaraja', serif",
-              fontSize: { xs: "24px", md: "48px" },
+              fontSize: { xs: "20px", sm: "28px", md: "40px", lg: "48px" },
               color: "#EBEBE2",
               letterSpacing: { xs: "1px", md: "2px" },
               lineHeight: 1,

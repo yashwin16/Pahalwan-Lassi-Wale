@@ -46,10 +46,11 @@ const ProductCard = ({ item }: { item: any }) => {
   const isMultiPrice = !!item.pricing;
 
   return (
-    <Box 
-      className="product-card-anim"
-      sx={{ 
-        width: "282px",
+      <Box 
+        className="product-card-anim"
+        sx={{ 
+          width: { xs: "100%", sm: "282px" },
+          maxWidth: "282px",
         height: "413px",
         backgroundColor: "#EFEFE6", // The bottom of the card is grey
         border: "3px solid #EAE5BD",
@@ -71,9 +72,10 @@ const ProductCard = ({ item }: { item: any }) => {
         }
       }}
     >
-      {/* White Image Container (260x260) */}
+      {/* White Image Container */}
       <Box sx={{ 
-        width: "260px", 
+        width: "100%", 
+        maxWidth: "260px",
         height: "260px", 
         backgroundColor: "#FFFFFF", 
         position: "relative",
@@ -109,9 +111,10 @@ const ProductCard = ({ item }: { item: any }) => {
         }} />
       </Box>
 
-      {/* Grey Product Details Section (260x142) */}
+      {/* Grey Product Details Section */}
       <Box sx={{ 
-        width: "260px",
+        width: "100%",
+        maxWidth: "260px",
         flexGrow: 1, 
         backgroundColor: "#EFEFE6", 
         display: "flex", 
@@ -245,7 +248,7 @@ export default function CategoryCatalog({ activeTopPill, allowedCategories }: Ca
   };
 
   return (
-    <Box ref={containerRef} sx={{ width: "100%", py: "40px", backgroundColor: "#EBEBE2", minHeight: "100vh" }}>
+    <Box ref={containerRef} sx={{ width: "100%", py: "40px", backgroundColor: "#EBEBE2", minHeight: "100vh", overflow: "hidden" }}>
       <Container maxWidth={false} sx={{ maxWidth: "1360px", mx: "auto", px: { xs: 2, md: "34px" } }}>
         
         {/* Top Navigation Pills (Separate pills matching latest Figma screenshot) */}
@@ -256,19 +259,21 @@ export default function CategoryCatalog({ activeTopPill, allowedCategories }: Ca
               <Link href={href} key={index} passHref style={{ textDecoration: 'none' }}>
                 <Button
                   sx={{
-                    width: { xs: "140px", sm: "162px" },
+                    width: "auto",
+                    minWidth: { xs: "80px", sm: "120px" },
                     height: "32px",
-                    padding: 0,
+                    padding: { xs: "0 12px", sm: "0 24px" },
                     pt: "5px", // Visually balance the font's high baseline
                     color: "#000000",
                     fontFamily: ramaraja.style.fontFamily,
                     fontWeight: "400",
-                    fontSize: { xs: "20px", sm: "24px" },
+                    fontSize: { xs: "16px", sm: "24px" },
                     lineHeight: "24px",
                     textTransform: "none",
                     border: "1.5px solid #93928B",
                     borderRadius: "20px",
                     backgroundColor: pill === activeTopPill ? "rgba(0,0,0,0.05)" : "transparent",
+                    flexShrink: 0,
                     "&:hover": {
                       backgroundColor: "rgba(0,0,0,0.08)",
                     }

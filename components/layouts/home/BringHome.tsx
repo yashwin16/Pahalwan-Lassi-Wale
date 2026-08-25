@@ -42,7 +42,7 @@ export default function BringHome() {
   }, { scope: container });
 
   return (
-    <Box ref={container} sx={{ width: "100%", py: { xs: "60px", md: "100px" }, backgroundColor: "#EBEBE2" }}>
+    <Box ref={container} sx={{ width: "100%", py: { xs: "60px", md: "100px" }, backgroundColor: "#EBEBE2", overflow: "hidden" }}>
       <Container maxWidth="xl" sx={{ display: "flex", justifyContent: "center", px: { xs: 2, md: 4 } }}>
         <Box
           sx={{

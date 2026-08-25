@@ -125,21 +125,22 @@ const HeroSection = () => {
         <Box sx={{ maxWidth: "700px" }}>
           
           {/* Top Label */}
-          <Box className="hero-element" sx={{ display: "flex", alignItems: "center", gap: "16px", mb: "30px" }}>
-            <Box sx={{ width: "40px", height: "1px", backgroundColor: "#D4AF37" }} />
+          <Box className="hero-element" sx={{ display: "flex", alignItems: "center", justifyContent: { xs: "center", md: "flex-start" }, gap: "16px", mb: "30px", width: "100%" }}>
+            <Box sx={{ display: { xs: "none", sm: "block" }, width: "40px", height: "1px", backgroundColor: "#D4AF37" }} />
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
                 fontWeight: 500,
-                fontSize: { xs: "12px", md: "14px" },
-                letterSpacing: "3px",
+                fontSize: { xs: "10px", sm: "12px", md: "14px" },
+                letterSpacing: { xs: "1px", sm: "2px", md: "3px" },
                 color: "#D4AF37", // Gold
                 textTransform: "uppercase",
+                textAlign: { xs: "center", md: "left" },
               }}
             >
               PAHALWAN LASSI WALE & SWEETS · SINCE 1989
             </Typography>
-            <Box sx={{ width: "40px", height: "1px", backgroundColor: "#D4AF37" }} />
+            <Box sx={{ display: { xs: "none", sm: "block" }, width: "40px", height: "1px", backgroundColor: "#D4AF37" }} />
           </Box>
 
           {/* Main Headline */}
@@ -147,7 +148,7 @@ const HeroSection = () => {
             <Typography
               sx={{
                 fontFamily: ebGaramond.style.fontFamily,
-                fontSize: { xs: "36px", md: "84px" },
+                fontSize: { xs: "36px", sm: "48px", md: "64px", lg: "84px" },
                 fontWeight: 500,
                 lineHeight: 1.1,
                 color: "#FFFFFF",
@@ -159,7 +160,7 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: romanesco.style.fontFamily,
-                  fontSize: { xs: "48px", md: "110px" },
+                  fontSize: { xs: "48px", sm: "64px", md: "84px", lg: "110px" },
                   color: "#F69F9B", // soft pinkish hue like in the reference
                   lineHeight: 0.8,
                   mt: { xs: "10px", md: "0" }
@@ -170,7 +171,7 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: ebGaramond.style.fontFamily,
-                  fontSize: { xs: "36px", md: "84px" },
+                  fontSize: { xs: "36px", sm: "48px", md: "64px", lg: "84px" },
                   fontWeight: 500,
                   lineHeight: 1.1,
                   color: "#FFFFFF",
@@ -263,7 +264,7 @@ const HeroSection = () => {
               <Typography
                 sx={{
                   fontFamily: ebGaramond.style.fontFamily,
-                  fontSize: { xs: "40px", md: "52px" },
+                  fontSize: { xs: "32px", sm: "40px", md: "46px", lg: "52px" },
                   color: "#D4AF37", // Gold
                   lineHeight: 1,
                   mb: "8px",

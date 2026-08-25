@@ -107,7 +107,7 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
   }, { scope: containerRef, dependencies: [activeCategory, searchQuery] });
 
   return (
-    <Box ref={containerRef} sx={{ width: "100%", py: "40px", backgroundColor: "#EBEBE2", minHeight: "100vh" }}>
+    <Box ref={containerRef} sx={{ width: "100%", py: "40px", backgroundColor: "#EBEBE2", minHeight: "100vh", overflow: "hidden" }}>
       <Container maxWidth={false} sx={{ maxWidth: "1360px", mx: "auto", px: { xs: 2, md: "34px" } }}>
         
         {/* Top Navigation Pills */}
@@ -119,19 +119,21 @@ export default function RestaurantCatalog({ activeTopPill }: RestaurantCatalogPr
                 <Button
                   className="top-pill"
                   sx={{
-                    width: { xs: "46%", sm: "140px", md: "162px" },
+                    width: "auto",
+                    minWidth: { xs: "80px", sm: "120px" },
                     height: "32px",
-                    padding: 0,
+                    padding: { xs: "0 12px", sm: "0 24px" },
                     pt: "5px", // Visually balance the font's high baseline
                     color: "#000000",
                     fontFamily: ramaraja.style.fontFamily,
                     fontWeight: "400",
-                    fontSize: { xs: "18px", sm: "20px", md: "24px" },
+                    fontSize: { xs: "16px", sm: "24px" },
                     lineHeight: "24px",
                     textTransform: "none",
                     border: "1.5px solid #93928B",
                     borderRadius: "20px",
                     backgroundColor: pill === activeTopPill ? "rgba(0,0,0,0.05)" : "transparent",
+                    flexShrink: 0,
                     "&:hover": {
                       backgroundColor: "rgba(0,0,0,0.08)",
                     }

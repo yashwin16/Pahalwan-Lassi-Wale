@@ -49,7 +49,7 @@ export default function GiftBoxes() {
   }, { scope: container });
 
   return (
-    <Box ref={container} sx={{ width: "100%", py: "60px", display: "flex", justifyContent: "center", backgroundColor: "#EBEBE2" }}>
+    <Box ref={container} sx={{ width: "100%", py: "60px", display: "flex", justifyContent: "center", backgroundColor: "#EBEBE2", overflow: "hidden" }}>
       <Box
         sx={{
           width: "100%",
@@ -76,8 +76,8 @@ export default function GiftBoxes() {
             sx={{
               position: "absolute",
               top: "-1px",
-              left: 0,
-              width: "100%",
+              left: "-1%",
+              width: "102%",
               height: "41px",
               zIndex: 10,
               backgroundImage: "url('/images/home/imgCorner.webp')",
@@ -91,7 +91,7 @@ export default function GiftBoxes() {
             sx={{
               position: "relative",
               width: { xs: "100%", md: "50%" },
-              height: { xs: "400px", md: "670px" },
+              height: { xs: "300px", sm: "400px", md: "500px", lg: "670px" },
             }}
           >
             <Image
@@ -116,8 +116,8 @@ export default function GiftBoxes() {
               justifyContent: "center",
               alignItems: "center",
               textAlign: "right", // Right aligned as per Figma
-              p: { xs: "40px 20px", md: "60px 80px" },
-              minHeight: { xs: "auto", md: "670px" },
+              p: { xs: "40px 20px", md: "60px 40px", lg: "60px 80px" },
+              minHeight: { xs: "auto", md: "500px", lg: "670px" },
             }}
           >
             <Typography
@@ -126,12 +126,12 @@ export default function GiftBoxes() {
                 fontFamily: ebGaramond.style.fontFamily,
                 fontStyle: "italic",
                 fontWeight: 500,
-                fontSize: { xs: "32px", md: "54px" },
+                fontSize: { xs: "32px", sm: "40px", md: "48px", lg: "54px" },
                 color: "#EFEFE6",
                 mb: "20px",
                 lineHeight: 1,
                 width: "100%",
-                whiteSpace: { xs: "normal", md: "nowrap" },
+                whiteSpace: { xs: "normal", lg: "nowrap" },
               }}
             >
               Sweetness, Made to Share
@@ -142,11 +142,11 @@ export default function GiftBoxes() {
               sx={{
                 fontFamily: poppins.style.fontFamily,
                 fontStyle: "italic",
-                fontSize: { xs: "16px", md: "24px" },
+                fontSize: { xs: "16px", sm: "18px", md: "20px", lg: "24px" },
                 color: "#FFFFFF",
                 maxWidth: "526px",
-                mb: "100px",
-                lineHeight: "44px",
+                mb: { xs: "60px", md: "100px" },
+                lineHeight: { xs: "28px", md: "36px", lg: "44px" },
                 fontWeight: 400,
                 width: "100%",
               }}
@@ -159,7 +159,7 @@ export default function GiftBoxes() {
               sx={{
                 fontFamily: ebGaramond.style.fontFamily,
                 fontStyle: "italic",
-                fontSize: { xs: "24px", md: "32px" },
+                fontSize: { xs: "24px", sm: "28px", md: "32px" },
                 color: "#EFEFE6",
                 mb: "20px",
                 fontWeight: 500,
@@ -181,11 +181,11 @@ export default function GiftBoxes() {
                     color: "#BA080F",
                     fontFamily: markoOne.style.fontFamily,
                     fontWeight: 400,
-                    fontSize: { xs: "24px", md: "32px" },
+                    fontSize: { xs: "20px", sm: "24px", md: "28px", lg: "32px" },
                     textTransform: "none",
                     borderRadius: "10px",
-                    width: { xs: "200px", md: "270px" },
-                    height: { xs: "48px", md: "56px" },
+                    width: { xs: "180px", sm: "220px", md: "270px" },
+                    height: { xs: "44px", md: "48px", lg: "56px" },
                     boxShadow: "none",
                     "&:hover": {
                       backgroundColor: "#F0F0F0",

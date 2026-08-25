@@ -1,6 +1,6 @@
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
-import Navbar from "@/components/widgets/Navbar";
 import Footer from "@/components/widgets/Footer";
+import Navbar from "@/components/widgets/Navbar";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -45,7 +45,7 @@ export default function RootLayout({
           <Suspense fallback={null}>
             <PageLoader />
           </Suspense>
-          <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", margin: 0, padding: 0 }}>
+          <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", margin: 0, padding: 0, width: "100%", maxWidth: "100%", overflowX: "clip" }}>
             <Navbar />
             <main style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
               {children}

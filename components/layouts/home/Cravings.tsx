@@ -30,7 +30,7 @@ const cravingsData = [
   {
     title: "OUR SNACKS",
     description: "Indulge in our freshly prepared traditional snacks, perfectly paired with our signature lassi.\nExperience the authentic taste of Aligarh in every bite.",
-    image: "/images/cravings/OurSnacks.webp",
+    image: "/images/cravings/ourSnacks.webp",
     link: "/snacks",
   },
   {
@@ -177,8 +177,9 @@ const Cravings = () => {
               <Box
                 sx={{
                   width: "100%",
-                  maxWidth: "1295px",
-                  height: { xs: "auto", md: "447px" },
+                  maxWidth: "1119px",
+                  minHeight: { xs: "auto", md: "447px" },
+                  height: "auto",
                   display: "flex",
                   flexDirection: { xs: "column", md: isEven ? "row" : "row-reverse" },
                   alignItems: "center",
@@ -190,8 +191,8 @@ const Cravings = () => {
                 <Box
                   className="image-box"
                   sx={{
-                    width: { xs: "100%", md: "418px" },
-                    height: { xs: "300px", md: "418px" },
+                    width: { xs: "100%", md: "45%", lg: "418px" },
+                    height: { xs: "300px", md: "350px", lg: "418px" },
                     position: "relative",
                     flexShrink: 0,
                     borderRadius: "5px",
@@ -215,7 +216,7 @@ const Cravings = () => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    padding: { xs: "0", md: isEven ? "0 0 0 105px" : "0 105px 0 0" },
+                    padding: { xs: "0", md: isEven ? "0 0 0 40px" : "0 40px 0 0", lg: isEven ? "0 0 0 105px" : "0 105px 0 0" },
                   }}
                 >
                   <Typography
@@ -223,7 +224,7 @@ const Cravings = () => {
                     sx={{
                       fontFamily: "'Marmelad', sans-serif",
                       color: "#8F0006",
-                      fontSize: { xs: "32px", md: "64px" },
+                      fontSize: { xs: "32px", sm: "42px", md: "52px", lg: "64px" },
                       lineHeight: 1,
                       textTransform: "uppercase",
                       width: { md: "100%" },
@@ -238,8 +239,8 @@ const Cravings = () => {
                     sx={{
                       fontFamily: "'Pochaevsk', sans-serif",
                       color: "#000000",
-                      fontSize: { xs: "18px", md: "24px" },
-                      lineHeight: "32px",
+                      fontSize: { xs: "16px", sm: "18px", md: "20px", lg: "24px" },
+                      lineHeight: { xs: "24px", md: "32px" },
                       width: { md: "100%" },
                       maxWidth: "830px",
                       marginBottom: "40px",

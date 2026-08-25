@@ -130,21 +130,22 @@ const ProductHero = () => {
         <Box sx={{ maxWidth: "700px" }}>
           
           {/* Top Label */}
-          <Box className="hero-element" sx={{ display: "flex", alignItems: "center", gap: "16px", mb: "30px" }}>
-            <Box sx={{ width: "40px", height: "1px", backgroundColor: "#D4AF37" }} />
+          <Box className="hero-element" sx={{ display: "flex", alignItems: "center", justifyContent: { xs: "center", md: "flex-start" }, gap: "16px", mb: "30px", width: "100%" }}>
+            <Box sx={{ display: { xs: "none", sm: "block" }, width: "40px", height: "1px", backgroundColor: "#D4AF37" }} />
             <Typography
               sx={{
                 fontFamily: poppins.style.fontFamily,
                 fontWeight: 500,
-                fontSize: { xs: "12px", md: "14px" },
-                letterSpacing: "3px",
+                fontSize: { xs: "10px", sm: "12px", md: "14px" },
+                letterSpacing: { xs: "1px", sm: "2px", md: "3px" },
                 color: "#D4AF37", 
                 textTransform: "uppercase",
+                textAlign: { xs: "center", md: "left" },
               }}
             >
               OUR SIGNATURE SELECTION
             </Typography>
-            <Box sx={{ width: "40px", height: "1px", backgroundColor: "#D4AF37" }} />
+            <Box sx={{ display: { xs: "none", sm: "block" }, width: "40px", height: "1px", backgroundColor: "#D4AF37" }} />
           </Box>
 
           {/* Main Headline */}

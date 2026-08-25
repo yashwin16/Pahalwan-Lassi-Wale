@@ -205,9 +205,8 @@ const AboutUs = () => {
               position: "absolute",
               top: 0,
               bottom: 0,
-              left: "50%",
-              width: "100vw",
-              transform: "translateX(-50%)",
+              left: 0,
+              width: "100%",
               zIndex: -1,
             }} />
             
@@ -216,10 +215,8 @@ const AboutUs = () => {
               sx={{ 
                 position: "absolute", 
                 top: 0, 
-                left: "50%", 
-                transform: "translateX(-50%)", 
-                width: "100vw", 
-                maxWidth: "1440px", 
+                left: 0, 
+                width: "100%", 
                 height: "100%", 
                 zIndex: -1, 
                 opacity: 0.3 

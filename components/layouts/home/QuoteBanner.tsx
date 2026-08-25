@@ -70,7 +70,7 @@ export default function QuoteBanner() {
                 sx={{
                   fontFamily: markoOne.style.fontFamily,
                   color: "#FFFFFF",
-                  fontSize: { xs: "16px", md: "26px" },
+                  fontSize: { xs: "16px", sm: "20px", md: "24px", lg: "26px" },
                   fontWeight: 400,
                 }}
               >
