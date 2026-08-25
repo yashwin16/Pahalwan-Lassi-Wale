@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useRef } from "react";
-import { Box, Typography } from "@mui/material";
-import Image from "next/image";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { Box, Typography } from "@mui/material";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import { useRef } from "react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -14,11 +14,11 @@ if (typeof window !== "undefined") {
 const shopsData = [
   {
     image: "/images/outlets/outletSasnigate.webp",
-    text: "1st floor of pahalwan lassi wale and sweets outlet,sasni gate chauraha, aligarh-202001",
+    text: "Pahalwan Lassi Wale & Sweets outlet,Sasni Gate Chauraha, Aligarh-202001",
   },
   {
     image: "/images/outlets/outletKhaiDora.webp",
-    text: "Khai dora, jaiganj road, Aligarh-202001",
+    text: "Pahalwan Lassi Wale & Sweets outlet,Khai Dora, Jaiganj Road, Aligarh-202001",
   },
 ];
 
