@@ -91,7 +91,7 @@ export default function Variety() {
             Variety of Range
           </Typography>
           {/* Small Pink Underline */}
-          <Box className="variety-underline" sx={{ width: "46px", height: "2px", backgroundColor: "#FFCCD5", transformOrigin: "center" }} />
+          <Box className="variety-underline" sx={{ width: "46px", height: "2px", backgroundColor: "#8F0006", transformOrigin: "center" }} />
         </Box>
 
         {/* Swiper Carousel */}
@@ -121,22 +121,25 @@ export default function Variety() {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "311px", // matched from Figma screenshot
+                    boxSizing: "border-box",
                     borderRadius: "16px",
                     border: "2px solid #B39402", // Gold border
                     overflow: "hidden", // ensures image stays within rounded corners
                     transition: "transform 0.3s ease",
                     "&:hover": {
                       transform: "translateY(-5px)",
-                    }
+                    },
+                    display: "block",
                   }}
                 >
                   {/* Background Image */}
                   <Image
                     src={variety.image}
                     alt={variety.title}
-                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: "cover" }}
+                    width={800}
+                    height={800}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ width: "100%", height: "auto", display: "block" }}
                     unoptimized={true}
                   />
                 </Box>

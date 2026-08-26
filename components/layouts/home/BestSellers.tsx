@@ -131,7 +131,6 @@ export default function BestSellers() {
                     sx={{
                       position: "relative",
                       width: "100%",
-                      aspectRatio: "330/277", // Updated aspect ratio to match Figma (330x277)
                       borderRadius: "20px", // Updated border radius to match Figma
                       overflow: "hidden",
                       mb: "20px",
@@ -139,13 +138,16 @@ export default function BestSellers() {
                       "&:hover": {
                         transform: "scale(1.03)",
                       },
+                      display: "block",
                     }}
                   >
                     <Image
                       src={item.image}
                       alt={item.title}
-                      fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      style={{ objectFit: "cover" }}
+                      width={800}
+                      height={800}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{ width: "100%", height: "auto", display: "block" }}
                       unoptimized={true}
                     />
                   </Box>

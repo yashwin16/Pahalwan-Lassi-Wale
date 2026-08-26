@@ -147,7 +147,7 @@ const Cravings = () => {
       {/* Simple Separator */}
       <Box 
         className="cravings-separator"
-        sx={{ width: "96px", height: "2px", backgroundColor: "#FC9BA2", mt: "20px", mb: "80px", transformOrigin: "center" }} 
+        sx={{ width: "96px", height: "2px", backgroundColor: "#8F0006", mt: "20px", mb: "80px", transformOrigin: "center" }} 
       />
 
       {/* The Wrapper that holds the normal vertical sections */}

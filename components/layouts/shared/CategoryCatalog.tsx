@@ -273,8 +273,6 @@ export default function CategoryCatalog({ activeTopPill, allowedCategories }: Ca
                     width: "auto",
                     minWidth: { xs: "80px", sm: "120px" },
                     height: "36px", 
-                    padding: { xs: "0 12px", sm: "0 24px" },
-                    pt: "4px", // Manually pushes the text DOWN to counter the font's high baseline
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
