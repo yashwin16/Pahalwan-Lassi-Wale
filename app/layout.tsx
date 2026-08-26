@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   keywords: ["sweets shop in aligarh", "sweets in aligarh", "best sweets shop in aligarh", "pahalwan lassi wale & sweets", "pahalwanlassiwaleandsweets.com", "lassi in aligarh", "famous lassi in aligarh", "best lassi in aligarh", "pahalwan lassi wale", "aligarh famous food", "best restaurant in aligarh", "aligarh lassi"],
   authors: [{ name: "Pahalwan Lassi Wale & Sweets" }],
   metadataBase: new URL("https://www.pahalwanlassiwaleandsweets.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Pahalwan Lassi Wale & Sweets | Best Sweets Shop in Aligarh",
     description: "Experience the most famous lassi and traditional mithai at the best sweets shop in Aligarh, Pahalwan Lassi Wale & Sweets.",
@@ -28,9 +31,38 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
   },
-  icons: {
-    icon: "/images/icons/logo.webp",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": ["Restaurant", "Store"],
+  name: "Pahalwan Lassi Wale & Sweets",
+  url: "https://www.pahalwanlassiwaleandsweets.com",
+  logo: "https://www.pahalwanlassiwaleandsweets.com/images/icons/logo.webp",
+  image: [
+    "https://www.pahalwanlassiwaleandsweets.com/images/icons/logo.webp"
+  ],
+  telephone: "+91-9219511640",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Khai Dora, Jaiganj Road",
+    addressLocality: "Aligarh",
+    addressRegion: "Uttar Pradesh",
+    postalCode: "202001",
+    addressCountry: "IN"
   },
+  priceRange: "₹₹",
+  servesCuisine: [
+    "Indian",
+    "North Indian",
+    "South Indian",
+    "Sweets",
+    "Beverages"
+  ],
+  sameAs: [
+    "https://www.instagram.com/pahalwanlassiwale?utm_source=qr&igsi=MXkxeHllbGVkcnBzYg==",
+    "https://www.facebook.com/share/14m3FRormnw/"
+  ]
 };
 
 export default function RootLayout({
@@ -41,6 +73,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
         <ThemeRegistry>
           <Suspense fallback={null}>
             <PageLoader />

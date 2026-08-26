@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   title: "Restaurant Menu | Pahalwan Lassiwale",
   description: "Explore the delicious restaurant menu at Pahalwan Lassiwale. We offer a variety of Indian main courses, breads, thalis, and combo offers in Aligarh.",
   keywords: ["best restaurant in aligarh", "pahalwan restaurant aligarh", "aligarh famous food", "indian food aligarh"],
-};
+  alternates: {
+    canonical: "/restaurant",
+  }};
 
 export default function RestaurantPage() {
   return (

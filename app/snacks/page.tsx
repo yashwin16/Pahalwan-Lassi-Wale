@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   title: "Snacks & Namkeen | Pahalwan Lassiwale",
   description: "Enjoy hot and fresh traditional snacks at Pahalwan Lassiwale, the perfect pairing with our famous lassi in Aligarh.",
   keywords: ["aligarh snacks", "best namkeen in aligarh", "pahalwan lassi wale snacks", "aligarh street food"],
-};
+  alternates: {
+    canonical: "/snacks",
+  }};
 
 export default function SnacksPage() {
   return (
