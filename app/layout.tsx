@@ -8,14 +8,14 @@ import PageLoader from "@/components/widgets/PageLoader";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "Pahalwan Lassi Wale & Sweets | Famous Lassi in Aligarh",
-  description: "Experience the most famous lassi in Aligarh at Pahalwan Lassi Wale & Sweets. Discover our signature rich lassi, handcrafted Indian sweets, snacks, and a full restaurant menu.",
-  keywords: ["pahalwan lassi wale & sweets", "pahalwanlassiwaleandsweets.com", "lassi in aligarh", "famous lassi in aligarh", "best lassi in aligarh", "pahalwan lassi wale", "aligarh famous food", "sweets in aligarh", "best restaurant in aligarh", "aligarh lassi"],
+  title: "Pahalwan Lassi Wale & Sweets | Best Sweets Shop in Aligarh",
+  description: "Experience the most famous lassi and traditional mithai at the best sweets shop in Aligarh, Pahalwan Lassi Wale & Sweets. Discover our signature rich lassi, handcrafted Indian sweets, snacks, and a full restaurant menu.",
+  keywords: ["sweets shop in aligarh", "sweets in aligarh", "best sweets shop in aligarh", "pahalwan lassi wale & sweets", "pahalwanlassiwaleandsweets.com", "lassi in aligarh", "famous lassi in aligarh", "best lassi in aligarh", "pahalwan lassi wale", "aligarh famous food", "best restaurant in aligarh", "aligarh lassi"],
   authors: [{ name: "Pahalwan Lassi Wale & Sweets" }],
   metadataBase: new URL("https://www.pahalwanlassiwaleandsweets.com"),
   openGraph: {
-    title: "Pahalwan Lassi Wale & Sweets | Famous Lassi in Aligarh",
-    description: "Experience the most famous lassi in Aligarh. Signature rich lassi, handcrafted mithai, and snacks.",
+    title: "Pahalwan Lassi Wale & Sweets | Best Sweets Shop in Aligarh",
+    description: "Experience the most famous lassi and traditional mithai at the best sweets shop in Aligarh, Pahalwan Lassi Wale & Sweets.",
     url: "https://www.pahalwanlassiwaleandsweets.com",
     siteName: "Pahalwan Lassi Wale & Sweets",
     images: [

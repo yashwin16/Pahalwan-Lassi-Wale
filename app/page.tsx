@@ -12,9 +12,9 @@ import Reviews from "../components/layouts/home/Reviews";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pahalwan Lassiwale | Best Lassi in Aligarh",
-  description: "Welcome to Pahalwan Lassiwale. Indulge in Aligarh's most famous lassi, traditional Indian sweets, snacks, and full-course restaurant meals.",
-  keywords: ["best lassi in aligarh", "aligarh famous lassi", "pahalwan lassi wale", "aligarh best sweets"],
+  title: "Pahalwan Lassiwale | Best Sweets Shop & Famous Lassi in Aligarh",
+  description: "Welcome to Pahalwan Lassiwale, the best sweets shop in Aligarh. Indulge in Aligarh's most famous lassi, traditional Indian sweets, snacks, and full-course restaurant meals.",
+  keywords: ["sweets shop in aligarh", "sweets in aligarh", "best sweets shop in aligarh", "best lassi in aligarh", "aligarh famous lassi", "pahalwan lassi wale", "aligarh best sweets"],
 };
 
 export default function Home() {
