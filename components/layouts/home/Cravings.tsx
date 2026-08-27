@@ -18,7 +18,7 @@ const cravingsData = [
   {
     title: "OUR LASSI",
     description: "Pahalwan Lassi Wale a famous Lassi Point known for its rich, creamy and\nrefreshing lassi in Aligarh.\nMade fresh with quality ingredients, every glass is thick and full of flavour.",
-    image: "/images/cravings/pahalwanLassii.webp",
+    image: "/images/cravings/pahalwanLassi.webp",
     link: "/lassi",
   },
   {

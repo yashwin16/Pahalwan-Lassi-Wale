@@ -8,9 +8,9 @@ import PageLoader from "@/components/widgets/PageLoader";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "Pahalwan Lassi Wale & Sweets | Best Sweets Shop in Aligarh",
+  title: "Pahalwan Lassi Wale & Sweets | Famous Lassi & Best Sweets Shop in Aligarh",
   description: "Experience the most famous lassi and traditional mithai at the best sweets shop in Aligarh, Pahalwan Lassi Wale & Sweets. Discover our signature rich lassi, handcrafted Indian sweets, snacks, and a full restaurant menu.",
-  keywords: ["sweets shop in aligarh", "sweets in aligarh", "best sweets shop in aligarh", "pahalwan lassi wale & sweets", "pahalwanlassiwaleandsweets.com", "lassi in aligarh", "famous lassi in aligarh", "best lassi in aligarh", "pahalwan lassi wale", "aligarh famous food", "best restaurant in aligarh", "aligarh lassi"],
+  keywords: ["sweets shop in aligarh","pahalwan sweets", "sweets in aligarh", "best sweets shop in aligarh", "pahalwan lassi wale & sweets", "pahalwanlassiwaleandsweets.com", "pahalwan lassi in aligarh", "famous lassi in aligarh", "best lassi in aligarh", "pahalwan lassi wale", "aligarh famous food", "best restaurant in aligarh", "aligarh lassi"],
   authors: [{ name: "Pahalwan Lassi Wale & Sweets" }],
   metadataBase: new URL("https://www.pahalwanlassiwaleandsweets.com"),
   alternates: {
