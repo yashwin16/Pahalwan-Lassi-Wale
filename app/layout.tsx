@@ -17,13 +17,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/icon.png', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-icon.png' }
-    ]
+    icon: '/favicon.ico',
   },
   openGraph: {
     title: "Pahalwan Lassi Wale & Sweets | Best Sweets Shop in Aligarh",
