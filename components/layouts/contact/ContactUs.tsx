@@ -115,19 +115,19 @@ export default function ContactUs() {
                 </Typography>
                 
                 <Box sx={{ display: "flex", alignItems: "center", gap: 3, mb: 4 }}>
-                  <Box sx={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "#111", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Box sx={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "#111", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <PhoneInTalkIcon sx={{ color: "#fff", fontSize: "20px" }} />
                   </Box>
-                  <Typography sx={{ fontFamily: beVietnamPro.style.fontFamily, fontSize: { xs: "18px", md: "20px" }, fontWeight: 600, color: "#000000" }}>
+                  <Typography sx={{ fontFamily: beVietnamPro.style.fontFamily, fontSize: { xs: "18px", md: "20px" }, fontWeight: 600, color: "#000000", wordBreak: 'break-word' }}>
                     +91-9219511640
                   </Typography>
                 </Box>
 
                 <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-                  <Box sx={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "#111", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Box sx={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "#111", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <EmailIcon sx={{ color: "#fff", fontSize: "20px" }} />
                   </Box>
-                  <Typography sx={{ fontFamily: beVietnamPro.style.fontFamily, fontSize: { xs: "18px", md: "20px" }, fontWeight: 600, color: "#000000", textDecoration: "underline" }}>
+                  <Typography sx={{ fontFamily: beVietnamPro.style.fontFamily, fontSize: { xs: "16px", sm: "18px", md: "20px" }, fontWeight: 600, color: "#000000", textDecoration: "underline", wordBreak: 'break-word' }}>
                     pahalwanlassiwale71@gmail.com
                   </Typography>
                 </Box>
