@@ -140,14 +140,16 @@ const Navbar = () => {
           >
             {/* Left: Logo */}
             <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-start" }}>
-              <Box sx={{ width: 150, height: 75, position: "relative" }}>
-                <Image
-                  src="/images/icons/logo.webp"
-                  alt="Pahalwan Lassiwala Logo"
-                  fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectFit: "contain", objectPosition: "left" }}
-                />
-              </Box>
+              <Link href="/" passHref style={{ textDecoration: "none" }}>
+                <Box sx={{ width: 150, height: 75, position: "relative", cursor: "pointer" }}>
+                  <Image
+                    src="/images/icons/logo.webp"
+                    alt="Pahalwan Lassiwala Logo"
+                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: "contain", objectPosition: "left" }}
+                  />
+                </Box>
+              </Link>
             </Box>
 
             {/* Center: Navigation Links (Desktop) */}
@@ -201,14 +203,16 @@ const Navbar = () => {
         }}
       >
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 6 }}>
-          <Box sx={{ width: 120, height: 60, position: "relative" }}>
-            <Image
-              src="/images/icons/logo.webp"
-              alt="Pahalwan Lassiwala Logo"
-              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              style={{ objectFit: "contain", objectPosition: "left" }}
-            />
-          </Box>
+          <Link href="/" passHref style={{ textDecoration: "none" }} onClick={() => setMobileOpen(false)}>
+            <Box sx={{ width: 120, height: 60, position: "relative", cursor: "pointer" }}>
+              <Image
+                src="/images/icons/logo.webp"
+                alt="Pahalwan Lassiwala Logo"
+                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ objectFit: "contain", objectPosition: "left" }}
+              />
+            </Box>
+          </Link>
           <IconButton onClick={() => setMobileOpen(false)} sx={{ color: "#EA1B2C", p: 0 }}>
             <CloseIcon fontSize="large" />
           </IconButton>

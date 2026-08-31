@@ -106,18 +106,18 @@ export const menuData: MenuItem[] = [
     "name": "Kulfi falooda",
     "unit": "per glass",
     "price": 110,
-    "image": "/images/sweets/desserts/kulfiFaluda.webp"
+    "image": "/images/sweets/desserts/rabriFaluda.webp"
   },
   {
     "category": "Dessert",
     "name": "Rabdi falooda",
     "unit": "per glass",
     "price": 130,
-    "image": "/images/sweets/desserts/rabriFaluda.webp"
+    "image": "/images/sweets/desserts/kulfiFaluda.webp"
   },
   {
     "category": "Dessert",
-    "name": "Gajar halwa",
+    "name": "Gajar halwa (Seasonal)",
     "unit": "kg",
     "pricing": {
       "250gm": 113,
@@ -371,7 +371,7 @@ export const menuData: MenuItem[] = [
       "500gm": 225,
       "1kg": 450
     },
-    "image": "/images/sweets/barfi/milkcake.webp"
+    "image": "/images/sweets/barfi/milk.webp"
   },
   {
     "category": "Barfi sweets",
@@ -382,7 +382,7 @@ export const menuData: MenuItem[] = [
       "500gm": 225,
       "1kg": 450
     },
-    "image": "/images/sweets/barfi/coconutBarfi.webp"
+    "image": "/images/sweets/barfi/cocBarfi.webp"
   },
   {
     "category": "Barfi sweets",
@@ -481,7 +481,7 @@ export const menuData: MenuItem[] = [
       "500gm": 150,
       "1kg": 300
     },
-    "image": "/images/sweets/Ghee/soan.webp"
+    "image": "/images/sweets/Ghee/sonPapdi.webp"
   },
   {
     "category": "ghee sweets",
@@ -525,7 +525,7 @@ export const menuData: MenuItem[] = [
       "500gm": 150,
       "1kg": 300
     },
-    "image": "/images/sweets/Ghee/jodhpuri.webp"
+    "image": "/images/sweets/Ghee/boondi.webp"
   },
   {
     "category": "ghee sweets",
