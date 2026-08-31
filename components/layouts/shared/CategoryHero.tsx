@@ -121,15 +121,6 @@ export default function CategoryHero({ title, desktopImage, mobileImage }: Categ
         {/* Mobile Image */}
         {mobileImage && (
           <Box sx={{ width: "100%", display: { xs: "block", md: "none" }, position: "relative" }}>
-            {/* Back to Home Button over Mobile Image */}
-            <Box sx={{ position: "absolute", top: "16px", left: "16px", zIndex: 3 }}>
-              <Link href="/" passHref style={{ textDecoration: "none" }}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: "6px", backgroundColor: "rgba(0,0,0,0.5)", color: "#FFFFFF", px: 2, py: 1, borderRadius: "24px", backdropFilter: "blur(4px)" }}>
-                  <ArrowBackIcon fontSize="small" />
-                  <Typography sx={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", fontWeight: 500 }}>Home</Typography>
-                </Box>
-              </Link>
-            </Box>
             <Image
               src={mobileImage}
               alt={`${title} Hero Mobile Image`}

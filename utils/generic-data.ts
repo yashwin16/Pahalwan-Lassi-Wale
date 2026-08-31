@@ -514,7 +514,7 @@ export const menuData: MenuItem[] = [
       "500gm": 150,
       "1kg": 300
     },
-    "image": "/images/sweets/Ghee/boondi.webp"
+    "image": "/images/sweets/Ghee/motichur.webp"
   },
   {
     "category": "ghee sweets",

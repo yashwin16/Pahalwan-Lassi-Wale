@@ -140,7 +140,7 @@ const OurLegacy = () => {
           {/* Left Old Logo: 318 x 179 */}
           <Box className="legacy-logo" sx={{ position: "relative", width: { xs: "200px", sm: "240px", md: "318px" }, height: { xs: "112px", sm: "135px", md: "179px" } }}>
             <Image 
-              src="/images/icons/pahalwanOldLogo.png" 
+              src="/images/icons/pahalwanOldLogo.webp" 
               alt="Pahalwan Old Logo" 
               fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               style={{ objectFit: "contain" }} 

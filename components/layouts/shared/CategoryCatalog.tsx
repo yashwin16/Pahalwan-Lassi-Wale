@@ -2,6 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import SearchIcon from "@mui/icons-material/Search";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Box, Button, Container, InputBase, Paper, Typography } from "@mui/material";
 import gsap from "gsap";
 import { EB_Garamond, Inter, Maname, Open_Sans, Ramaraja, Signika } from "next/font/google";
@@ -263,7 +264,37 @@ export default function CategoryCatalog({ activeTopPill, allowedCategories }: Ca
       <Container maxWidth={false} sx={{ maxWidth: "1360px", mx: "auto", px: { xs: 2, md: "34px" } }}>
         
         {/* Top Navigation Pills (Separate pills matching latest Figma screenshot) */}
-        <Box sx={{ display: "flex", justifyContent: "center", gap: { xs: "10px", md: "40px" }, mb: "50px", flexWrap: "wrap" }}>
+        <Box sx={{ display: "flex", justifyContent: "center", gap: { xs: "10px", md: "40px" }, mb: "50px", flexWrap: "wrap", alignItems: "center" }}>
+          <Link href="/" passHref style={{ textDecoration: 'none' }}>
+            <Button
+              sx={{
+                width: "auto",
+                minWidth: { xs: "80px", sm: "120px" },
+                height: "36px", 
+                padding: { xs: "0 12px", sm: "0 24px" },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#000000",
+                fontFamily: inter.style.fontFamily,
+                fontWeight: "500",
+                fontSize: { xs: "14px", sm: "16px" },
+                lineHeight: 1,
+                textTransform: "none",
+                border: "1.5px solid #93928B",
+                borderRadius: "20px",
+                backgroundColor: "transparent",
+                gap: "6px",
+                flexShrink: 0,
+                "&:hover": {
+                  backgroundColor: "rgba(0,0,0,0.08)",
+                }
+              }}
+            >
+              <ArrowBackIcon fontSize="small" />
+              Home
+            </Button>
+          </Link>
           {topPills.map((pill, index) => {
             const href = pill === "Sweets" ? "/sweets" : pill === "Snacks" ? "/snacks" : pill === "Lassi" ? "/lassi" : "/restaurant";
             return (

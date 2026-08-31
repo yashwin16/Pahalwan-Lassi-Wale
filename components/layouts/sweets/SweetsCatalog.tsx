@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Box, Typography, TextField, InputAdornment, Container, Button, Paper, InputBase, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { Maname, Inter, EB_Garamond, Ramaraja, Open_Sans, Signika } from "next/font/google";
@@ -184,7 +186,37 @@ export default function SweetsCatalog() {
       <Container maxWidth={false} sx={{ maxWidth: "1360px", mx: "auto", px: { xs: 2, md: "34px" } }}>
         
         {/* Top Navigation Pills (Separate pills matching latest Figma screenshot) */}
-        <Box sx={{ display: "flex", justifyContent: "center", gap: { xs: "10px", md: "40px" }, mb: "50px", flexWrap: "wrap" }}>
+        <Box sx={{ display: "flex", justifyContent: "center", gap: { xs: "10px", md: "40px" }, mb: "50px", flexWrap: "wrap", alignItems: "center" }}>
+          <Link href="/" passHref style={{ textDecoration: 'none' }}>
+            <Button
+              sx={{
+                width: "auto",
+                minWidth: { xs: "80px", sm: "120px" },
+                height: "32px", 
+                padding: { xs: "0 12px", sm: "0 24px" },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#000000",
+                fontFamily: inter.style.fontFamily,
+                fontWeight: "500",
+                fontSize: { xs: "14px", sm: "16px" },
+                lineHeight: 1,
+                textTransform: "none",
+                border: "1.5px solid #93928B",
+                borderRadius: "20px",
+                backgroundColor: "transparent",
+                gap: "6px",
+                flexShrink: 0,
+                "&:hover": {
+                  backgroundColor: "rgba(0,0,0,0.08)",
+                }
+              }}
+            >
+              <ArrowBackIcon fontSize="small" />
+              Home
+            </Button>
+          </Link>
           {topPills.map((pill, index) => (
             <Button
               key={index}
