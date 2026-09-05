@@ -60,14 +60,14 @@ export const menuData: MenuItem[] = [
     "name": "Special big lassi",
     "unit": "per glass",
     "price": 80,
-    "image": "/images/lassi/bigLassi.webp"
+    "image": "/images/lassi/bglassi.webp"
   },
   {
     "category": "Beverages",
     "name": "Sepcial Badam milk",
     "unit": "per glass",
     "price": 80,
-    "image": "/images/lassi/badam.webp"
+    "image": "/images/lassi/bigLassi.webp"
   },
   {
     "category": "Dessert",
